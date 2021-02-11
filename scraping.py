@@ -38,58 +38,57 @@ for li_tag in soup.find_all('ul', {'class': 'list-style-none'}):
             # print(linguagem, percentagem, link)
             data_links.append('https://github.com' + link + '\n')
 
-
 # print(data_links)
 # f.writerow(data_links)
 
-
-
-# for webpage in data_links:
-url = 'https://github.com/vitorramosdasilva/dashboard-genghiscode/search?l=Python'
-idxLanguage = url.find('=')
-idxLanguage += 1
-languageFilter = url[idxLanguage:]
-page = requests.get('https://github.com/vitorramosdasilva/dashboard-genghiscode/search?l=Python')
-soup = BeautifulSoup(page.text, 'html.parser')
 contagem = []
 linguagem = []
 df = pd.DataFrame()
 qtd_total = 0
 percentual = []
 
+# idxLanguage = url.find ( '=' )
+# idxLanguage += 1
+# languageFilter = url [ idxLanguage : ]
 
-for ul_tag in soup.find_all('ul', {'class': 'filter-list small'}):
-    for li_tag in ul_tag.find_all('li'):
-        for a_tag in li_tag.find_all('a', {'class': 'filter-item'}):
-            for span_tag in a_tag.find_all('span', {'class': 'count'}):
-                quantidade = a_tag.text.split('\n')[1]
-                contagem.append(int(quantidade.replace(',', '')))
-                linguagem.append(a_tag.text.split('\n')[2])
-                qtd_total += int(quantidade.replace(',', ''))
+# for webpage in data_links:
+for url in data_links:
+    page = requests.get(url)
+    soup = BeautifulSoup(page.text, 'html.parser')
+    for ul_tag in soup.find_all('ul', {'class': 'filter-list small'}):
+        for li_tag in ul_tag.find_all('li'):
+            for a_tag in li_tag.find_all('a', {'class': 'filter-item'}):
+                for span_tag in a_tag.find_all('span', {'class': 'count'}):
+                    quantidade = a_tag.text.split('\n')[1]
+                    contagem.append(int(quantidade.replace(',', '')))
+                    linguagem.append(a_tag.text.split('\n')[2])
+                    qtd_total += int(quantidade.replace(',', ''))
+                    print(contagem[0])
+                    print(linguagem[0])
+                    print(qtd_total)
 
-
-
-                # pegar valor da longuagem filter...
-
-df['linguagem'] = linguagem
-df['contagem'] = contagem
-
-
-for index, row in df.iterrows():
-    percentual.append(str(round(float(row['contagem']) / float(qtd_total) * 100, 2)) + '%')
-    print(qtd_total, row['contagem'])
-
-
-df['percentual'] = percentual
-print(df)
-
-# if linguagem_search == languageFilter :
+    # Pegar a quantidad de arquivos e a liguagem (Com Filter (Search))
 #     for div_tag in soup.find_all('div', {'class': 'd-flex flex-column flex-md-row flex-justify-between border-bottom pb-3 position-relative'}):
 #         for h3_tag in div_tag.find_all('h3'):
-#             contagem = h3_tag.text.replace(' code results in ', '')
-#             # print(linguagem, float(contagem.replace(',', '.')))
-#             # print(qtd_total)
+#             contagem_aux = int(h3_tag.text.split()[0].replace(',', ''))
+#             contagem.append(contagem_aux)
+#             linguagem.append(languageFilter)
+#             qtd_total += contagem_aux
+#
+#
+# df['Extensão'] = linguagem
+# df['contagem'] = contagem
+#
+# for index, row in df.iterrows():
+#     percentual.append(str(round(float(row['contagem']) / float(qtd_total) * 100, 2)) + '%')
+#     # print(qtd_total, row['contagem'])
+#
+#
+# df['percentual'] = percentual
+# print(df)
 
+
+# 0. LER A DOCUMENTAÇÃO ...
 # 0. LER A DOCUMENTAÇÃO ...
 # 1. CRIAR GIT HUB
 # 2. Pegar o valor da linguaguem Selecionada
