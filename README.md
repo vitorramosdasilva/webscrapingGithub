@@ -1,4 +1,4 @@
-# webscrapingGithub
+# WebscrapingGithub
 webscraping dos repositórios do Github a partir das informações em um arquivo .txt e exportada as informações em outro .txt
 
 Passo a Passo para Execução:
