@@ -15,7 +15,7 @@ Inserindo informações nesse arquivo .txt a ferramenta de webScraping coletara 
 4. Ao final da execução ele salva no arquivo Output.txt os dados, exemplo:
 
 Extensão         |Linhas      Bytes       % Linhas  % Bytes
-------------------------------------------------------------                                            
+                                           
 LICENSE          |19        |1064.96     |0.05      |0.07
 configjs         |38        |873.00      |0.10      |0.06
 confjs           |76        |2570.24     |0.20      |0.17
@@ -34,6 +34,17 @@ jshintrc         |27        |522.00      |0.07      |0.03
 json             |224       |5203.92     |0.58      |0.35
 lock             |68        |2160.64     |0.17      |0.14
 md               |543       |22097.92    |1.40      |1.47
+
+Extensão   |     Linhas    |    Bytes
+js         |  17599 (96 %) | 31894 (79 %)
+md         |    202 ( 1 %) |     5 ( 0 %)
+html       |    130 ( 0 %) |  5703 (14 %)
+json       |     95 ( 0 %) |   465 ( 1 %)
+sh         |     75 ( 0 %) |   101 ( 0 %)
+<outros>   |     74 ( 0 %) |  1322 ( 3 %)
+sample     |     34 ( 0 %) |   787 ( 1 %)
+enc        |      0 ( 0 %) |     3 ( 0 %)
+
 
 
 5. Ao final da execução ele gera a quantidade total de arquivos capturados no terminal
