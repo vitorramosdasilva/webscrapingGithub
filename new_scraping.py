@@ -179,24 +179,21 @@ if ext_array:
     print('quantidade de arquvos capturados: ' + str(len(linha_array)))
     # print('No frontpressorg/frontpress rodou os 145 arquivos do repositorio..')
      
-    df_sum = df.groupby(['Extensão']).sum()
+    df_sum = df.groupby(['Extensão']).sum()   
     df_sum['% '+'Linhas'] = round((df_sum['Linhas'] / qt_linha)*100,2)
     df_sum['% '+'Bytes'] = round((df_sum['Bytes'] / qt_bk)*100,2)
-    df_sum.to_string() 
+    # df_sum.to_string() 
        
     # Gera novo .txt e Escreve os dados ...
-    file = open("Output.txt", "w")    
-    file.close() 
-    with open('Output.txt', 'a') as f:
-        f.write(
-            df_sum.to_string(header = False, index = False)
-        )
-   
-    # df_sum.to_csv('Output.txt', header=True, index=False, sep='\t', mode='a')
+    file = open("Output.txt", "w")
+    file.close()
+    df_sum.reset_index().to_csv('Output.txt')
+    # file.writerow(['Extensão','Linhas','Bytes','% '+'Linhas','% '+'Bytes'])
+    # df_sum.to_csv('Output.txt', header=False, index=False, sep='\t', mode='a')    
     # df_sum.to_csv(r'Output.txt', header=True, index=None, sep='|', mode='a')
 else:
     
-    print('Não há casos com listas de linguagens nessa urls para gerar Output.txt ...')  
+    print('Não há casos com listas de linguagens nessas urls para gerar Output.txt ...')  
    
 
 print(df_sum)
