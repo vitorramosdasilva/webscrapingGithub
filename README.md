@@ -12,25 +12,28 @@ Nas informaçoes acima demonstra o <nomedousuario/nomedoprojeto>.
 Inserindo informações nesse arquivo .txt a ferramenta de webScraping coletara os dados de repositório.
 
 3. Para Executar o projeto insira no terminal: python3 new_scraping.py 
-4. Ao final da execução ele salva no arquivo OutPut.txt os dados:
+4. Ao final da execução ele salva no arquivo Output.txt os dados, exemplo:
 
- Extensão       Linhas      Bytes  % Linhas    % Bytes
-                                              
-LICENSE             19    1064.96      7.57     424.29
-css                285    4469.24    113.55    1780.57
-csv                 32     817.00     12.75     325.50
-htaccess             2      63.00      0.80      25.10
-html               175    6260.76     69.72    2494.33
-js                 296    7255.36    117.93    2890.58
-json               131    2835.28     52.19    1129.59
-lock                68    2160.64     27.09     860.81
-md                 344   15124.48    137.05    6025.69
-minjs                4   95744.00      1.59   38145.02
-php               1999   55701.08    796.41   22191.67
-py                1943   63023.12    774.10   25108.81
-scrutinizeryml       7     147.00      2.79      58.57
-travisyml           18     267.00      7.17     106.37
-txt              15645  466776.80   6233.07  185966.85
+Extensão         |Linhas      Bytes       % Linhas  % Bytes
+------------------------------------------------------------                                            
+LICENSE          |19        |1064.96     |0.05      |0.07
+configjs         |38        |873.00      |0.10      |0.06
+confjs           |76        |2570.24     |0.20      |0.17
+constantjs       |16        |538.00      |0.04      |0.04
+controllerjs     |412       |14099.40    |1.06      |0.94
+css              |285       |4469.24     |0.73      |0.30
+csv              |32        |817.00      |0.08      |0.05
+directivejs      |320       |8531.00     |0.82      |0.57
+editorconfig     |13        |190.00      |0.03      |0.01
+filterjs         |12        |243.00      |0.03      |0.02
+gitignore        |12        |242.00      |0.03      |0.02
+htaccess         |2         |63.00       |0.01      |0.00
+html             |191       |6778.76     |0.49      |0.45
+js               |7900      |275348.88   |20.33     |18.32
+jshintrc         |27        |522.00      |0.07      |0.03
+json             |224       |5203.92     |0.58      |0.35
+lock             |68        |2160.64     |0.17      |0.14
+md               |543       |22097.92    |1.40      |1.47
 
 
 5. Ao final da execução ele gera a quantidade total de arquivos capturados no terminal
