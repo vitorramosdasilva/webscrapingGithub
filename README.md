@@ -12,7 +12,7 @@ Nas informaçoes acima demonstra o <nomedousuario/nomedoprojeto>.
 Inserindo informações nesse arquivo .txt a ferramenta de webScraping coletara os dados de repositório.
 
 3. Para Executar o projeto insira no terminal: python3 new_scraping.py 
-4. Ao final da execução ele salva no arquivo Output.txt os dados, exemplo:
+4. Ao final da execução ele salva no arquivo Output.txt na raiz do projeto os dados, exemplo:
 
 
 |Extensão       |  Linhas    |  Bytes      | % Linhas  | % Bytes|
